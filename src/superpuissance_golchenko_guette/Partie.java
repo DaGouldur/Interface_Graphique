@@ -38,35 +38,35 @@ public class Partie {
         return ListeJoueurs[0];
     }
     public void initialiserPartie(){
-        GrilleJeu.viderGrille();
-        Random rand= new Random();
-        Scanner sc=new Scanner(System.in);
+        GrilleJeu.viderGrille(); // on vide la grille
+        Random rand= new Random(); 
+        Scanner sc=new Scanner(System.in); 
         System.out.println("Pseudo du premier joueur: ");
-        Joueur J1=new Joueur(sc.nextLine());
+        Joueur J1=new Joueur(sc.nextLine()); 
         System.out.println("Pseudo du second joueur: ");
         Joueur J2=new Joueur(sc.nextLine());
-        ListeJoueurs[0]=J1;
+        ListeJoueurs[0]=J1; // on crée un tableau qui contient les 2 joueurs
         ListeJoueurs[1]=J2;
-        attribuerCouleursAuxJoueurs();
-        System.out.println(J1.Couleur+" est attribué au joueur "+J1.Nom);
+        attribuerCouleursAuxJoueurs(); // on attribue des couleurs avec une fonction crée plus haut
+        System.out.println(J1.Couleur+" est attribué au joueur "+J1.Nom); 
         System.out.println(J2.Couleur+" est attribué au joueur "+J2.Nom);
         boolean lePremier=rand.nextBoolean();
-        if(lePremier==true){
+        if(lePremier==true){ // fonction qui choisit au hasard le premier joueur
             JoueurCourant=ListeJoueurs[0];
         }
         else{
             JoueurCourant=ListeJoueurs[1];
         }
-        for(int i=0;i<2;i++){
+        for(int i=0;i<2;i++){ // on crée 2 trous noir qui cachent des desintegrateurs
             int ligneTrouNoirDes=rand.nextInt(6);
             int colonneTrouNoirDes=rand.nextInt(7);
             GrilleJeu.placerDesintegrateur(ligneTrouNoirDes, colonneTrouNoirDes);
             GrilleJeu.placerTrouNoir(ligneTrouNoirDes, colonneTrouNoirDes);
             }
-        for(int i=0;i<3;i++){
+        for(int i=0;i<3;i++){ // on crée 3 trous noir
             String TrouPlace=new String();
             TrouPlace="";
-            while(TrouPlace==""){
+            while(TrouPlace==""){// pour éviter les situations où le trou noir n'est pas placé (car autre trou noir ou desintegrateur présent), alors que le compteur a déjà évolué
                 int ligneTrouNoir=rand.nextInt(6);
                 int colonneTrouNoir=rand.nextInt(7);
                 if(GrilleJeu.Cellules[ligneTrouNoir][colonneTrouNoir].presenceDesintegrateur()==false){
@@ -77,7 +77,7 @@ public class Partie {
                 }
         }
         }
-        for(int i=0;i<3;i++){
+        for(int i=0;i<3;i++){// système identique au celui d'en haut
             String DesPlace=new String();
             DesPlace="";
             while(DesPlace==""){
@@ -91,7 +91,7 @@ public class Partie {
                 }
             }
         }
-        GrilleJeu.afficherGrilleSurConsole();
+        GrilleJeu.afficherGrilleSurConsole();// affichage de la grille faite
         }
     public void debuterPartie(){
     initialiserPartie();
