@@ -16,7 +16,7 @@ import javax.swing.JButton;
 public class CelluleGraphique extends JButton {
 
     Cellule celluleAssocie;
-    ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide.png"));
+    ImageIcon img_vide = new javax.swing.ImageIcon(getClass().getResource("/images/celluleVide.png")); // on crée des variables qui contiennent les images
     ImageIcon img_desintegrateur = new javax.swing.ImageIcon(getClass().getResource("/images/desintegrateur.png"));
     ImageIcon img_Jaune = new javax.swing.ImageIcon(getClass().getResource("/images/jetonJaune.png"));
     ImageIcon img_Rouge = new javax.swing.ImageIcon(getClass().getResource("/images/jetonRouge.png"));
@@ -29,7 +29,7 @@ public class CelluleGraphique extends JButton {
     @Override
     public void paintComponent(Graphics G) {
         super.paintComponent(G);
-        if (celluleAssocie.presenceTrouNoir() == true) {
+        if (celluleAssocie.presenceTrouNoir() == true) {// on associe des images aux élément de tableau
             setIcon(img_trouNoir);
         } else if (celluleAssocie.presenceDesintegrateur() == true) {
             setIcon(img_desintegrateur);

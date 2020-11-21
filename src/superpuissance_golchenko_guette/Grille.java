@@ -22,9 +22,10 @@ public boolean ajouterJetonDansColonne(Joueur JoueurCourant, int colonne){
     if(colonneRemplie(colonne)==true) {//si la colonne est remplie on ne peut pas rajouter de jeton
         return false;
     }
-    int i=5;// on ajoute le jeton dans la colonne ciblee sur la cellule vide la plus basse
+    else{
+    int i=0;// on ajoute le jeton dans la colonne ciblee sur la cellule vide la plus basse
     while(Cellules[i][colonne].JetonCourant!=null){
-        i--;
+        i++;
     }
     Jeton unJeton=JoueurCourant.retirerJeton();
     Cellules[i][colonne].JetonCourant=unJeton;
@@ -38,6 +39,7 @@ public boolean ajouterJetonDansColonne(Joueur JoueurCourant, int colonne){
         
     }
     return true;
+    }
 }
     public boolean colonneRemplie(int indColonne){
         return(Cellules[0][indColonne].recupererJeton()!=null);

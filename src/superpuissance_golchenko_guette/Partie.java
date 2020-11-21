@@ -77,10 +77,10 @@ public class Partie {
                 }
         }
         }
-        for(int i=0;i<3;i++){// système identique au celui d'en haut
+        for(int i=0;i<3;i++){// création des 3 desintegrateurs
             String DesPlace=new String();
             DesPlace="";
-            while(DesPlace==""){
+            while(DesPlace==""){// système identique au celui d'en haut
             int ligneDesintegrateur=rand.nextInt(6);
             int colonneDesintegrateur=rand.nextInt(7);
                 if(GrilleJeu.Cellules[ligneDesintegrateur][colonneDesintegrateur].presenceDesintegrateur()==false){
