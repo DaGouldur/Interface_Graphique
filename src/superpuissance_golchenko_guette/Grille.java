@@ -23,9 +23,9 @@ public boolean ajouterJetonDansColonne(Joueur JoueurCourant, int colonne){
         return false;
     }
     else{
-    int i=0;// on ajoute le jeton dans la colonne ciblee sur la cellule vide la plus basse
+    int i=5;// on ajoute le jeton dans la colonne ciblee sur la cellule vide la plus basse
     while(Cellules[i][colonne].JetonCourant!=null){
-        i++;
+        i--;
     }
     Jeton unJeton=JoueurCourant.retirerJeton();
     Cellules[i][colonne].JetonCourant=unJeton;
