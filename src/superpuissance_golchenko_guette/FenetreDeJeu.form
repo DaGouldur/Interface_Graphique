@@ -177,7 +177,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="textemessage">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -266,9 +266,9 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="desint_var1">
+        <Component class="javax.swing.JLabel" name="desint_var2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre de desintegrateurs Joueur 1 "/>
+            <Property name="text" type="java.lang.String" value="Nombre de desintegrateurs Joueur 2"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -333,7 +333,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="desint_var2">
+        <Component class="javax.swing.JLabel" name="desint_var1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nombre de desintegrateurs Joueur 1 "/>
           </Properties>
