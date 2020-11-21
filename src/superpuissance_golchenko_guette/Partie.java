@@ -57,10 +57,6 @@ public class Partie {
         else{
             JoueurCourant=ListeJoueurs[1];
         }
-        for(int i=0;i<21;i++){
-            J1.ajouterJeton(new Jeton(J1.Couleur));
-            J2.ajouterJeton(new Jeton(J2.Couleur));
-        }
         for(int i=0;i<2;i++){
             int ligneTrouNoirDes=rand.nextInt(6);
             int colonneTrouNoirDes=rand.nextInt(7);
@@ -68,11 +64,18 @@ public class Partie {
             GrilleJeu.placerTrouNoir(ligneTrouNoirDes, colonneTrouNoirDes);
             }
         for(int i=0;i<3;i++){
-            int ligneTrouNoir=rand.nextInt(6);
-            int colonneTrouNoir=rand.nextInt(7);
-            if(GrilleJeu.Cellules[ligneTrouNoir][colonneTrouNoir].presenceDesintegrateur()==false){
-            GrilleJeu.placerTrouNoir(ligneTrouNoir, colonneTrouNoir);   
-            }
+            String TrouPlace=new String();
+            TrouPlace="";
+            while(TrouPlace==""){
+                int ligneTrouNoir=rand.nextInt(6);
+                int colonneTrouNoir=rand.nextInt(7);
+                if(GrilleJeu.Cellules[ligneTrouNoir][colonneTrouNoir].presenceDesintegrateur()==false){
+                    if(GrilleJeu.Cellules[ligneTrouNoir][colonneTrouNoir].presenceTrouNoir()==false){
+                GrilleJeu.placerTrouNoir(ligneTrouNoir, colonneTrouNoir);
+                TrouPlace="ok";
+                    }
+                }
+        }
         }
         for(int i=0;i<3;i++){
             String DesPlace=new String();
@@ -81,9 +84,10 @@ public class Partie {
             int ligneDesintegrateur=rand.nextInt(6);
             int colonneDesintegrateur=rand.nextInt(7);
                 if(GrilleJeu.Cellules[ligneDesintegrateur][colonneDesintegrateur].presenceDesintegrateur()==false){
-                    if(GrilleJeu.Cellules[ligneDesintegrateur][colonneDesintegrateur].presenceTrouNoir()==false);
+                    if(GrilleJeu.Cellules[ligneDesintegrateur][colonneDesintegrateur].presenceTrouNoir()==false){
                         GrilleJeu.placerDesintegrateur(ligneDesintegrateur, colonneDesintegrateur);
                     DesPlace="ok";
+                    }
                 }
             }
         }
