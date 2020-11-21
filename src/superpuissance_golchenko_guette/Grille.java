@@ -134,14 +134,28 @@ public boolean etreGagnantePourJoueur(Joueur nom){//On indique les conditions de
         }
     }
     return false;
+    
 }   
-    public void tasserGrille(int ligne,int colonne){//On tasse la grille
-     while (ligne>0){//On baisse les jetons à partir du supprimer
-        Cellules[ligne][colonne].JetonCourant=Cellules[ligne-1][colonne].JetonCourant;
-        ligne=ligne-1;
-         
+
+
+    void tasserColonne(int colonne){//On indique comment tasser une colonne
+        for (int i = 5; i >= 0; i--){
+            if (i==0){
+                Cellules[i][colonne].JetonCourant = null;
+            }
+            else {
+                if (Cellules[i][colonne].JetonCourant == null){
+                    Cellules[i][colonne].JetonCourant = Cellules[i-1][colonne].JetonCourant;
+                    Cellules[i-1][colonne].JetonCourant = null;
+                }
+            }
+        }
     }
-    Cellules[0][colonne].JetonCourant=null;//On remplace le sommet de la colonne par une case vide
+
+    void tasserGrille(){//On tasse la grille colonne par colonne
+        for (int i = 0; i <= 6; i++){
+            tasserColonne(i);
+        }
     }
  
    public boolean placerTrouNoir(int ligne, int colonne){//On place un trou noir 
