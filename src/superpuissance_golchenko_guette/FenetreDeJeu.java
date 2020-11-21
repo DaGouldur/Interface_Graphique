@@ -28,28 +28,28 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             for (int j=0;j<7;j++){
              CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Cellules[i][j]);
              
-            cellGraph.addActionListener(new java.awt.event.ActionListener() {
+            cellGraph.addActionListener(new java.awt.event.ActionListener() {//On donne les actions à suivre lorsque on clique sur une case
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Cellule c = cellGraph.celluleAssocie;
-                    if (c.JetonCourant == null) return ;
+                    Cellule c = cellGraph.celluleAssocie;//On réfère la case
+                    if (c.JetonCourant == null) return ;//Si la case est vide on ne fait rien
                     
-                    if(c.JetonCourant.Couleur.equals(JoueurCourant.Couleur)){
+                    if(c.JetonCourant.Couleur.equals(JoueurCourant.Couleur)){//Si la case est occupée par un jeton du joueur courant il récupère son jeton
                         textemessage.setText("le joueur " + JoueurCourant.Nom + " récupère un de ses jetons");
                         Jeton jrecup = c.recupererJeton();
                         JoueurCourant.ajouterJeton(jrecup);
                         c.supprimerJeton();
                         joueurSuivant();
                     }
-                    else{
-                        if (JoueurCourant.nombreDesintegrateurs > 0) {
+                    else{//Sinon il s'agit d'un jeton adverse alors:
+                        if (JoueurCourant.nombreDesintegrateurs > 0) {// Si on a au moins un désintégrateur on l'utilise
                             textemessage.setText("le joueur " + JoueurCourant.Nom + " désintégre un jeton");
                             c.supprimerJeton();
                             JoueurCourant.utiliserDesintegrateur();
                             joueurSuivant();
                         }
-                        else return ;
+                        else return ;//Sinon on ne fait rien
                     }
-                    GrilleJeu.tasserGrille();
+                    GrilleJeu.tasserGrille();//On met à jour la grille et les différentes informations
                     PanneauGrille.repaint();
                     desint_var1.setText(ListeJoueurs[1].nombreDesintegrateurs+"");
                     desint_var2.setText(ListeJoueurs[0].nombreDesintegrateurs+"");
@@ -350,21 +350,21 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     public boolean jouerDansColonne(int indice_colonne){
         boolean jouer;
         jouer=GrilleJeu.ajouterJetonDansColonne(JoueurCourant,indice_colonne);
-        PanneauGrille.repaint();
-        desint_var1.setText(ListeJoueurs[1].nombreDesintegrateurs+"");
+        PanneauGrille.repaint();//On met à jour la grille
+        desint_var1.setText(ListeJoueurs[1].nombreDesintegrateurs+"");//On indique le nombre de désintégrateur de chaque joueur
         desint_var2.setText(ListeJoueurs[0].nombreDesintegrateurs+"");
         
-        boolean vict_j1 = GrilleJeu.etreGagnantePourJoueur(ListeJoueurs[1]);
+        boolean vict_j1 = GrilleJeu.etreGagnantePourJoueur(ListeJoueurs[1]);//On définie la victoire pour chaque joueur
         boolean vict_j2 = GrilleJeu.etreGagnantePourJoueur(ListeJoueurs[0]);
         
-        if (vict_j1 && ! vict_j2) {
+        if (vict_j1 && ! vict_j2) {//On définie la victoire du J1
             textemessage.setText("Victoire de "+ ListeJoueurs[1].Nom);
         }
-        if (vict_j2 && ! vict_j1) {
+        if (vict_j2 && ! vict_j1) {//On définie la victoire du J2
             textemessage.setText("Victoire de "+ ListeJoueurs[0].Nom);
         }
         
-        if (vict_j1 && vict_j2){
+        if (vict_j1 && vict_j2){//On départage en cas de victoire simultaner
             if (JoueurCourant == ListeJoueurs[1]){
                 textemessage.setText("Victoire de "+ ListeJoueurs[0].Nom + " faute de jeu de l'autre joueur");
             }
