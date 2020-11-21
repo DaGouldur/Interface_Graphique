@@ -45,7 +45,7 @@
         <Property name="rows" type="int" value="6"/>
       </Layout>
     </Container>
-    <Container class="javax.swing.JPanel" name="PanneauInfoJoueurs">
+    <Container class="javax.swing.JPanel" name="PanneauCreationPartie">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f0" green="0" red="c8" type="rgb"/>
@@ -67,7 +67,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="50" width="170" height="30"/>
+              <AbsoluteConstraints x="10" y="50" width="170" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -116,7 +116,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="PanneauCreationPartie">
+    <Container class="javax.swing.JPanel" name="PanneauInfoJeu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="f0" red="f0" type="rgb"/>
@@ -145,7 +145,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="nom_txt3">
+        <Component class="javax.swing.JLabel" name="nom_jcourant">
           <Properties>
             <Property name="text" type="java.lang.String" value="Joueur courant :"/>
           </Properties>
@@ -187,7 +187,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="PanneauInfoPartie">
+    <Container class="javax.swing.JPanel" name="PanneauInfoJoueurs">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="f0" red="f0" type="rgb"/>
