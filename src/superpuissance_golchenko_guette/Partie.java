@@ -91,7 +91,7 @@ public class Partie {
                 }
             }
         }
-        GrilleJeu.afficherGrilleSurConsole();// affichage de la grille faite
+        GrilleJeu.afficherGrilleSurConsole();// affichage de la grille finie
         }
     public void debuterPartie(){
     initialiserPartie();
