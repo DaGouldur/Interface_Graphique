@@ -10,17 +10,17 @@ package superpuissance_golchenko_guette;
  * @author dagou
  */
 public class Jeton {
-     String Couleur;
-    public Jeton(String uneCouleur){
+    String Couleur;//On crée une variable couleur
+    public Jeton(String uneCouleur){ //On initialise la couleur du jeton avec le paramètre
         Couleur=uneCouleur;
         
         
     }
-    public String lireCouleur(){
+    public String lireCouleur(){//Renvoie la couleur du jeton
       return Couleur;
     }
     @Override
-    public String toString(){
+    public String toString(){//On remplace la couleur par l'initial et la couleur d'affichage associé
         if("Rouge".equals(Couleur)){
             return " R"+"\u001B[31m 0 ";
         }
