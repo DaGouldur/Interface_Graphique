@@ -172,7 +172,7 @@ public class Partie {
                         }
                     }
                     GrilleJeu.supprimerJeton(6-lignedesintegration, colonnedesintegration-1);//On supprime le jeton
-                    GrilleJeu.tasserGrille(6-lignedesintegration,colonnedesintegration-1);//On tasse la grille
+                    GrilleJeu.tasserGrille();//On tasse la grille
                     GrilleJeu.afficherGrilleSurConsole();//On affiche la grille mis à jour
                     if (JoueurCourant==ListeJoueurs[0]){//On change de tours
                         JoueurCourant=ListeJoueurs[1];
@@ -215,7 +215,7 @@ public class Partie {
                     }
                     Jeton jeton_a_recuperer=GrilleJeu.recupererJeton(lignerecupe-1, colonnerecupe-1);//On récupère le jeton
                     GrilleJeu.supprimerJeton(lignerecupe-1, colonnerecupe-1);//On le supprime
-                    GrilleJeu.tasserGrille(lignerecupe-1,colonnerecupe-1);//On tasse la grille
+                    GrilleJeu.tasserGrille();//On tasse la grille
                     JoueurCourant.ajouterJeton(jeton_a_recuperer);//On l'ajoute à la liste
                     GrilleJeu.afficherGrilleSurConsole();//On met la grille à jour
                     if (JoueurCourant==ListeJoueurs[0]){//On change de tour
