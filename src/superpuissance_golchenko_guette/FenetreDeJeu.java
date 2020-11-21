@@ -22,9 +22,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
      */
     public FenetreDeJeu() {
     initComponents();
-    PanneauInfoJeu.setVisible(false);
+    PanneauInfoJeu.setVisible(false);// on désactive les 2 tableaux inutiles avant le début de la partie
     PanneauInfoJoueurs.setVisible(false);
-        for (int i=5;i>=0;i--){
+        for (int i=5;i>=0;i--){ // on crée une boucle qui crée la grille sur le PanneauGrille
             for (int j=0;j<7;j++){
              CelluleGraphique cellGraph = new CelluleGraphique(GrilleJeu.Cellules[i][j]);
              PanneauGrille.add(cellGraph);
@@ -277,8 +277,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }
     
     public void initialiserPartie(){
-        GrilleJeu.viderGrille();
-        Random rand= new Random();
+        GrilleJeu.viderGrille(); // on vide la grille
+        Random rand= new Random(); 
         String nomJ1=NomJoueur1.getText();// on prends les noms que les joueurs saisisent dans les cases dediés
         String nomJ2=NomJoueur2.getText();
         Joueur J1=new Joueur(nomJ1);
